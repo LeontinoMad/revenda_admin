@@ -28,7 +28,7 @@ function NovoGado() {
     }
     getRacas();
     setFocus("tipo");
-  }, []);
+  }, [setFocus]);
 
   const optionsRaca = racas.map((raca) => (
     <option key={raca.id} value={raca.id}>

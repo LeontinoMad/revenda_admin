@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -44,7 +46,7 @@ export default function Home() {
       style={{ backgroundImage: 'url("/fundo.jpeg")' }}
     >
       <div className="max-w-sm">
-        <img
+        <Image
           src="./gado.webp"
           alt="Revenda"
           style={{ width: 240 }}

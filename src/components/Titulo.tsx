@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FiUsers } from "react-icons/fi";
+import Image from "next/image";
 
 export function Titulo() {
   const [adminNome, setAdminNome] = useState<string>("");
@@ -23,7 +24,7 @@ export function Titulo() {
           href="/principal"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="/gado.webp" className="h-16" alt="Fusca" />
+          <Image src="/gado.webp" className="h-16" alt="Fusca" />
           <span className="self-center text-3xl font-semibold whitespace-nowrap dark:text-white">
             Revenda de Gado Biduca: Admin
           </span>

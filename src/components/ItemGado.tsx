@@ -4,6 +4,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { FaRegStar } from "react-icons/fa";
 import Cookies from "js-cookie";
 import { GadoI } from "@/utils/types/gados";
+import Image from "next/image";
 
 interface ListaGadoProps {
   gado: GadoI;
@@ -69,7 +70,7 @@ function ItemGado({ gado, gados, setGados }: ListaGadoProps) {
         scope="row"
         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        <img src={gado.foto} alt="Capa do gado" style={{ width: 200 }} />
+        <Image src={gado.foto} alt="Capa do gado" style={{ width: 200 }} />
       </th>
       <td className={`px-6 py-4 ${gado.destaque ? "font-extrabold" : ""}`}>
         {gado.tipo}

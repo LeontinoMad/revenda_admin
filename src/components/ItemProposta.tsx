@@ -4,6 +4,7 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { FaRegEdit } from "react-icons/fa";
 import Cookies from "js-cookie";
 import { PropostaI } from "@/utils/types/propostas";
+import Image from "next/image";
 
 interface listaPropostaProps {
   proposta: PropostaI;
@@ -82,7 +83,7 @@ function ItemProposta({
         scope="row"
         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        <img
+        <Image
           src={proposta.gado.foto}
           alt="Foto do gado"
           style={{ width: 200 }}
@@ -94,13 +95,13 @@ function ItemProposta({
           minimumFractionDigits: 2,
         })}
       </td>
-      <td className={`px-6 py-4`}>{proposta.cliente.nome}</td>
+      <td className={`px-6 py-4`}>{proposta.clienteId}</td>
       <td className={`px-6 py-4`}>{proposta.descricao}</td>
       <td className={`px-6 py-4`}>{proposta.resposta}</td>
       <td className="px-6 py-4">
         {proposta.resposta ? (
           <>
-            <img src="@/ok_png.jpg" alt="Ok" style={{ width: 60 }} />
+            <Image src="@/ok_png.jpg" alt="Ok" style={{ width: 60 }} />
           </>
         ) : (
           <>
