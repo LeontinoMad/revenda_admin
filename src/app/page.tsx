@@ -22,14 +22,11 @@ export default function Home() {
   }, [setFocus]);
 
   async function verificaLogin(data: Inputs) {
-    const response = await fetch(
-      "https://vercel.com/leontino-madrugas-projects/api-revenda-gado/admins/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: data.email, senha: data.senha }),
-      }
-    );
+    const response = await fetch("http://localhost:3004/admins/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: data.email, senha: data.senha }),
+    });
 
     if (response.status === 200) {
       const admin = await response.json();
