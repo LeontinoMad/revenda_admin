@@ -7,7 +7,7 @@ export interface ClienteI {
   email: string;
 }
 
-import ItemCliente from "@/components/itemCliente";
+import ItemCliente from "@/components/ItemCliente";
 
 function ControleClientes() {
   const [clientes, setClientes] = useState<ClienteI[]>([]);
