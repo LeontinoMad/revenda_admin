@@ -1,12 +1,23 @@
 "use client";
 import { useEffect, useState } from "react";
-//import Link from "next/link";
-
 import { PropostaI } from "@/utils/types/propostas";
 import ItemProposta from "@/components/ItemProposta";
+import { ClienteI } from "@/utils/types/clientes"; // Substitua pelo caminho correto do arquivo onde ClienteI está definido
 
 function ControlePropostas() {
   const [propostas, setPropostas] = useState<PropostaI[]>([]);
+
+  const [clientes, setClientes] = useState<ClienteI[]>([]);
+  useEffect(() => {
+    async function fetchClientes() {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_URL_API}/clientes`
+      );
+      const data: ClienteI[] = await response.json();
+      setClientes(data);
+    }
+    fetchClientes();
+  }, []);
 
   useEffect(() => {
     async function getPropostas() {
@@ -25,6 +36,7 @@ function ControlePropostas() {
       proposta={proposta}
       propostas={propostas}
       setPropostas={setPropostas}
+      clientes={clientes} // Passe a lista de clientes aqui
     />
   ));
 
