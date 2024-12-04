@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation"; // Corrigido para 'next/navigation'
+import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 
 type Inputs = {
@@ -49,7 +48,8 @@ export default function Home() {
         <Image
           src="./gado.webp"
           alt="Revenda"
-          style={{ width: 240 }}
+          width={240}
+          height={180}
           className="center"
         />
         <h1 className="text-3xl font-bold my-8">Admin: Revenda Avenida</h1>

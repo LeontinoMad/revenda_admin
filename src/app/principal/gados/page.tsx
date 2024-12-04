@@ -9,7 +9,7 @@ function CadGados() {
 
   useEffect(() => {
     async function getGados() {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/gados`);
+      const response = await fetch(`http://localhost:3004/gados`);
       const dados = await response.json();
       setGados(dados);
     }
