@@ -45,13 +45,7 @@ export default function Home() {
       style={{ backgroundImage: 'url("/fundo.jpeg")' }}
     >
       <div className="max-w-sm">
-        <Image
-          src="./gado.webp"
-          alt="Revenda"
-          width={240}
-          height={180}
-          className="center"
-        />
+        <Image src="./gado.webp" alt="Revenda" width={240} height={180} />
         <h1 className="text-3xl font-bold my-8">Admin: Revenda Avenida</h1>
         <form
           className="max-w-sm mx-auto"

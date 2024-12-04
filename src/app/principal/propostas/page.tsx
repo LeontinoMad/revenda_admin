@@ -10,9 +10,7 @@ function ControlePropostas() {
   const [clientes, setClientes] = useState<ClienteI[]>([]);
   useEffect(() => {
     async function fetchClientes() {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL_API}/clientes`
-      );
+      const response = await fetch(`http://localhost:3004/clientes`);
       const data: ClienteI[] = await response.json();
       setClientes(data);
     }
@@ -21,9 +19,7 @@ function ControlePropostas() {
 
   useEffect(() => {
     async function getPropostas() {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_URL_API}/propostas`
-      );
+      const response = await fetch(`http://localhost:3004/propostas`);
       const dados = await response.json();
       setPropostas(dados);
     }
