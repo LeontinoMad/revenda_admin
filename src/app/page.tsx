@@ -21,11 +21,14 @@ export default function Home() {
   }, [setFocus]);
 
   async function verificaLogin(data: Inputs) {
-    const response = await fetch("http://localhost:3004/admins/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: data.email, senha: data.senha }),
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_URL_API}/admins/login`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email, senha: data.senha }),
+      }
+    );
 
     if (response.status === 200) {
       const admin = await response.json();
@@ -45,7 +48,13 @@ export default function Home() {
       style={{ backgroundImage: 'url("/fundo.jpeg")' }}
     >
       <div className="max-w-sm">
-        <Image src="./gado.webp" alt="Revenda" width={240} height={180} />
+        <Image
+          src="/gado.webp"
+          className="h-16"
+          alt="Logo "
+          width={240}
+          height={180}
+        />
         <h1 className="text-3xl font-bold my-8">Admin: Revenda Avenida</h1>
         <form
           className="max-w-sm mx-auto"
