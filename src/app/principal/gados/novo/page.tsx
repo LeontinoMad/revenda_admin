@@ -22,7 +22,7 @@ function NovoGado() {
 
   useEffect(() => {
     async function getRacas() {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/racas`);
+      const response = await fetch(`http://localhost:3004/racas`);
       const dados = await response.json();
       setRacas(dados);
     }

@@ -14,7 +14,9 @@ function ControleClientes() {
   useEffect(() => {
     async function getClientes() {
       try {
-        const response = await fetch(`http://localhost:3004/clientes`);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_URL_API}/clientes`
+        );
 
         if (!response.ok) {
           throw new Error("Erro ao buscar clientes");
@@ -46,9 +48,12 @@ function ControleClientes() {
   }, []);
 
   const handleDelete = async (id: string) => {
-    const response = await fetch(`http://localhost:3004/clientes/${id}`, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      `process.env.NEXT_PUBLIC_URL_API/clientes/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     if (response.ok) {
       const updatedClientes = clientes.filter((item) => item.id !== id);
