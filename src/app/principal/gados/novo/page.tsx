@@ -22,7 +22,7 @@ function NovoGado() {
 
   useEffect(() => {
     async function getRacas() {
-      const response = await fetch(`http://localhost:3004/racas`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/racas`);
       const dados = await response.json();
       setRacas(dados);
     }
@@ -58,7 +58,7 @@ function NovoGado() {
       body: JSON.stringify(novoGado),
     });
 
-    if (response.status == 201) {
+    if (response.status == 200) {
       toast.success("Ok! Gado cadastrado com sucesso");
       reset();
     } else {
