@@ -52,8 +52,8 @@ export default function Home() {
           src="/gado.webp"
           className="h-16"
           alt="Logo "
-          width={240}
-          height={180}
+          width={256}
+          height={247}
         />
         <h1 className="text-3xl font-bold my-8">Admin: Revenda Avenida</h1>
         <form
