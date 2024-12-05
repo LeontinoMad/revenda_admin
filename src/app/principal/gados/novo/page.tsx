@@ -40,7 +40,7 @@ function NovoGado() {
     const novoGado: Inputs = {
       tipo: data.tipo,
       idade: data.idade,
-      preco: Number(data.peso),
+      preco: Number(data.preco),
       peso: Number(data.peso),
       informacoes: data.informacoes,
       foto: data.foto,
@@ -58,9 +58,18 @@ function NovoGado() {
       body: JSON.stringify(novoGado),
     });
 
-    if (response.status == 200) {
+    if (response.status === 200) {
       toast.success("Ok! Gado cadastrado com sucesso");
-      reset();
+      reset({
+        tipo: "",
+        idade: "",
+        preco: 0,
+        peso: 0,
+        informacoes: "",
+        foto: "",
+        sexo: "",
+        racasId: undefined,
+      });
     } else {
       toast.error("Erro no cadastro do Gado...");
     }
