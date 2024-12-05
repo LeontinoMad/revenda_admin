@@ -55,7 +55,7 @@ export default function Home() {
           width={256}
           height={247}
         />
-        <h1 className="text-3xl font-bold my-8">Admin: Revenda Avenida</h1>
+        <h1 className="text-3xl font-bold my-8">Admin: Revenda Biduca</h1>
         <form
           className="max-w-sm mx-auto"
           onSubmit={handleSubmit(verificaLogin)}
