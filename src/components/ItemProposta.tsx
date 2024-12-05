@@ -108,7 +108,7 @@ function ItemProposta({
       <td className="px-6 py-4">
         {proposta.resposta ? (
           <>
-            <Image src="@/ok_png.jpg" alt="Ok" width={60} height={50} />
+            <Image src="/ok_png.jpg" alt="Ok" width={60} height={50} />
           </>
         ) : (
           <>
