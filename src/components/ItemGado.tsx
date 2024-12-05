@@ -1,7 +1,7 @@
 "use client";
 import { Dispatch, SetStateAction } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
-import { FaRegStar } from "react-icons/fa";
+//import { FaRegStar } from "react-icons/fa";
 import Cookies from "js-cookie";
 import { GadoI } from "@/utils/types/gados";
 import Image from "next/image";
@@ -37,29 +37,29 @@ function ItemGado({ gado, gados, setGados }: ListaGadoProps) {
     }
   }
 
-  async function alterarDestaque() {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_URL_API}/gado/destaque/${gado.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: ("Bearer " +
-            Cookies.get("admin_logado_token")) as string,
-        },
-      }
-    );
+  // async function alterarDestaque() {
+  //   const response = await fetch(
+  //     `${process.env.NEXT_PUBLIC_URL_API}/gado/destaque/${gado.id}`,
+  //     {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-type": "application/json",
+  //         Authorization: ("Bearer " +
+  //           Cookies.get("admin_logado_token")) as string,
+  //       },
+  //     }
+  //   );
 
-    if (response.status === 200) {
-      const gados2 = gados.map((x) => {
-        if (x.id === gado.id) {
-          return { ...x, destaque: !x.destaque };
-        }
-        return x;
-      });
-      setGados(gados2);
-    }
-  }
+  //   if (response.status === 200) {
+  //     const gados2 = gados.map((x) => {
+  //       if (x.id === gado.id) {
+  //         return { ...x, destaque: !x.destaque };
+  //       }
+  //       return x;
+  //     });
+  //     setGados(gados2);
+  //   }
+  //}
 
   return (
     <tr
@@ -98,11 +98,11 @@ function ItemGado({ gado, gados, setGados }: ListaGadoProps) {
           onClick={excluirGado}
         />
         &nbsp;
-        <FaRegStar
+        {/* <FaRegStar
           className="text-3xl text-yellow-600 inline-block cursor-pointer"
           title="Destacar"
           onClick={alterarDestaque}
-        />
+        /> */}
       </td>
     </tr>
   );
